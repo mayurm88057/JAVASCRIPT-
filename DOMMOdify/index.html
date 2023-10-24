@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>DOm Manipulation</h1>
+    <div>
+        <span id="one" name="first" > First Span</span>
+        <span id="two" name="second"> Second Span</span> 
+    </div>
+    <script>
+        const div =document.querySelector('div')
+        const SpanOne= document.getElementById("one")
+        const SpanTwo=document.getElementById("two")
+
+      console.log(SpanOne.getAttribute("name"))
+      SpanOne.setAttribute('name','abcd')
+      SpanOne.removeAttribute('name')
+      SpanOne.id='123445'
+
+
+
+      SpanTwo.classList.add('new-class')
+      SpanOne.style.color='red'
+      SpanTwo.style.backgroundColor ='blue'
+      SpanOne.style.fontSize="20"
+
+
+    </script>
+</body>
+</html>

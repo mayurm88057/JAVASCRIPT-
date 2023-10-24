@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Dom Manipulation</h1>
+    <script> 
+    // console.dir(document)
+    // console.log(document.domain)
+    console.log(document.head)
+    document.title='dom manipulation'
+    const body = document.body
+    body.append('hello')
+
+    const div=document.createElement('div')
+    console.log(div)
+    div.innerText='javascript'
+   body.append(div)
+
+   //body.removeChild(div)
+   div.remove()
+
+</script> 
+    
+    
+</body>
+</html>
