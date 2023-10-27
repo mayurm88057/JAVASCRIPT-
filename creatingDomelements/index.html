@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<h>>, initial-scale=1.0">
+    <title>Dom</title>
+</head>
+<body>
+ 
+    <h1>My favorite Foods</h1>
+    <ul id="foodlist">
+        <li> pizza</li>
+        <li>Sushi</li>
+
+    </ul>
+    <button id ="addbutton">Add tacos</button>
+    <button id="removeButton">Remove</button>
+<script>
+    
+const addbutton = document.querySelector('#addbutton')
+const removeButton= document.querySelector('#removeButton')
+const foodlist= document.querySelector('#foodlist')
+
+addbutton.addEventListener('click',()=>{
+const newListitem= document.createElement('li')
+const newListitemtext= document.createTextNode('tacos')
+
+newListitem.append(newListitemtext)
+foodlist.appendChild(newListitem)
+})
+
+removeButton.addEventListener('click',()=>{
+
+    const Sushi= document.querySelector('li:nth-child(2)')
+    foodlist.removeChild(Sushi)
+})
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>creatingDom</title>
+
+</head>
+<body>
+    <h1>menu</h1>
+    <ul id='foodlist'>
+        <li> Samosoa</li>
+        <li> lemon </li>
+
+
+    </ul>
+    <button id="addbutton">add sushi</button>
+    <button id="removeButton">remove Samosoa</button>
+    <script>
+
+        const addbutton=document.querySelector('#addbutton')
+        const removeButton=document.querySelector('#removeButton') 
+        const foodlist=document.querySelector('#foodlist')
+
+        addbutton.addEventListener('click',()=>{
+            const newListItem=document.createElement('li')
+            const newListItemText=document.createTextNode('shushi')
+       
+
+        newListItem.append(newListItemText)
+        foodlist.appendChild(newListItem)
+
+
+    })
+
+    removeButton.addEventListener('click',()=>{
+       const lemon=document.querySelector('li:nth-child(2)')
+       foodlist.removeChild(lemon)
+
+    })
+    </script> 
+
+    
+</body>
+</html>

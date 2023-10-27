@@ -1,0 +1,21 @@
+// he key event addEventListener using a input function
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<input>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="searchbox" type="text"/>
+
+<script>
+    const searchbox=document.querySelector('#searchbox');
+
+    searchbox.addEventListener('keyup',()=> {
+        console.log('event triggered')
+    })
+</script>
+</body>
+</html>
