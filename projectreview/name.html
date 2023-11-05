@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM Query Example</title>
+</head>
+<body>
+    <h1 id="pageTitle">Hello, World!</h1>
+    <p id="content">This is a simple web page.</p>
+
+    <button id="changeTextButton">Change Text</button>
+
+    <script>
+        // JavaScript code for querying and manipulating the DOM
+
+        // Query the DOM to get a reference to the elements by their IDs
+        const pageTitle = document.getElementById('pageTitle');
+        const content = document.getElementById('content');
+        const changeTextButton = document.getElementById('changeTextButton');
+
+        // Event listener for the button to change text
+        changeTextButton.addEventListener('click', function() {
+            pageTitle.textContent = 'New Title';
+            content.innerHTML = 'The text has been changed!';
+        });
+    </script>
+</body>
+</html>
+
+

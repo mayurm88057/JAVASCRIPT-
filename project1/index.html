@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Art indexOne</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+            }
+    
+            header {
+                background-color: lightcoral;
+                color: #121010;
+                padding: 20px 0;
+                text-align: center;
+            }
+    
+            h1 {
+                margin: 0;
+            }
+    
+            main {
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+                text-align: center;
+            }
+    
+            .indexOne {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+    
+            img {
+                max-width: 100%;
+                max-height: 400px;
+                margin: 0 10px;
+            }
+    
+            .controls {
+                margin-top: 20px;
+            }
+    
+            button {
+                padding: 10px 20px;
+                font-size: 16px;
+                cursor: pointer;
+            }
+        </style>
+</head>
+<body>
+    <header>
+        <h1>Art indexOne</h1>
+    </header>
+    <main>
+        <div class="indexOne"><img src="https://images.pexels.com/photos/18129003/pexels-photo-18129003/free-photo-of-portrait-of-a-bearded-senior-man-in-grey-shawl-and-cap.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=2" alt="artWork"></div>
+        <div class="controls">
+            <button id="prev-btn">Previous</button>
+            <button id="next-btn">Next</button>
+        </div>
+    </main>
+    <script>
+        const slides = [
+            'https://images.pexels.com/photos/18129003/pexels-photo-18129003/free-photo-of-portrait-of-a-bearded-senior-man-in-grey-shawl-and-cap.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+            'https://images.pexels.com/photos/17152058/pexels-photo-17152058/free-photo-of-city-road-vacation-street.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+            'https://images.pexels.com/photos/18333381/pexels-photo-18333381/free-photo-of-fire-around-eastern-hod-statue.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+            'https://images.pexels.com/photos/18550063/pexels-photo-18550063/free-photo-of-moon-cake.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+            'https://images.pexels.com/photos/13811613/pexels-photo-13811613.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+            'https://images.pexels.com/photos/17565900/pexels-photo-17565900/free-photo-of-reflection-of-neoclassical-building.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+        ];
+
+        let currentIndex = 0;
+        const indexOne = document.querySelector('.indexOne');
+
+        function showImage(index) {
+            const imageLinks = slides[index];
+            indexOne.innerHTML = `<img src="${imageLinks}" alt="artWork">`;
+        }
+
+        function updatedSlide() {
+            showImage(currentIndex);
+        }
+
+        document.getElementById('prev-btn').addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updatedSlide();
+            }
+        });
+
+        document.getElementById('next-btn').addEventListener('click', () => {
+            if (currentIndex < slides.length - 1) {
+                currentIndex++;
+                updatedSlide();
+            }
+        });
+
+        // Initial load
+        updatedSlide();
+
+    </script>
+
+
+
+<webchatgpt-custom-element-3192076d-71de-40ed-97e6-814903a4fd2c id="webchatgpt-snackbar" style="z-index: 2147483647;"></webchatgpt-custom-element-3192076d-71de-40ed-97e6-814903a4fd2c></body>
+</html>

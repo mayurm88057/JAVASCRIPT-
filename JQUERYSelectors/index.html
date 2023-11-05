@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQUERY</title>
+</head>
+<style>
+    .heading{
+     color: blue;
+    }
+    .box{
+        width:200px;
+        height: 200px;
+        background-color:lightblue;
+     }
+    .heading{
+        border: 2px solid red;
+    }
+    .active{
+        background-color: green;
+
+    } 
+
+</style>
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
+<body>
+    <h1>Jquery selector</h1>
+    <p>this is paragraph</p>
+    <p id="myElement" class ="highlight"> this paragraph has a hgh light</p>
+     <div class="box"></div>
+    <div class ="box"></div>
+    <div class ="box"></div>
+
+<a href="#" class="nav-link">NAvaigation link</a>
+<a href="#"  class="nav-link">Navigation  Link</a>
+
+<h2> HEading 1</h2>
+<h2>HEading 2</h2>
+<h2>HEading 2</h2>
+
+<input type="text" required>
+<input type ="text">
+<input type ="text" required>
+
+<button>Button 1</button>
+<button>Button 2</button>
+
+<form id ="myform">
+    <input type="text" name ="username" placeholder=" USername">
+    <input type="password" name="password" placeholder="password">
+    <input type="submit" value="submit">
+
+  </form>
+
+  <script>
+//$("p").text("this text is changed using jqeary")
+  $(".highlight").css("color","red") 
+ $("#box").hide()
+//$("input[required]").addClass("required")
+
+$("a.nav-link").addClass('active')
+
+  </script>
+</body>
+</html>

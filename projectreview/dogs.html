@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Advanced JavaScript Web Page</title>
+</head>
+<body>
+    <h1>Random Dog Image</h1>
+    <button id="fetchButton">Fetch Random Dog</button>
+    <div id="dogImageContainer"></div>
+
+    <script>
+        // JavaScript code
+
+        // Function to fetch a random dog image using the Dog CEO's Dog API
+        async function fetchRandomDogImage() {
+            try {
+                const response = await fetch('https://dog.ceo/api/breeds/image/random');
+                const data = await response.json();
+                return data.message;
+            } catch (error) {
+                console.error('Error fetching dog image:', error);
+                return null;
+            }
+        }
+
+        // Function to update the dog image in the DOM
+        async function updateDogImage() {
+            const dogImage = await fetchRandomDogImage();
+            if (dogImage) {
+                const dogImageContainer = document.getElementById('dogImageContainer');
+                dogImageContainer.innerHTML = `<img src="${dogImage}" alt="Random Dog">`;
+            }
+        }
+
+        // Event listener for the "Fetch Random Dog" button
+        document.getElementById('fetchButton').addEventListener('click', updateDogImage);
+
+        // Initial image fetch
+        updateDogImage();
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery</title>
+    <style>
+        .highlight{
+            background-color: blue;
+
+        }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+   $(document).ready(function(){
+    var filteredItems=$('li').filter(function(){
+        return $(this).text().includes('2');
+    })
+    filteredItems.addClass('highlight')
+   })
+    </script>
+</head>
+<body>
+    <h1>Transversing Example</h1>
+    <ul>
+        <li>ITEM 1</li>
+        <li>ITEM 2</li>
+        <li>ITEM 3</li>
+        <li>ITEM 4</li>
+    </ul>
+</body>
+</html>

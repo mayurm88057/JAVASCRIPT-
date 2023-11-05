@@ -1,0 +1,27 @@
+.gallery {
+    max-width: 400px;
+    margin:20px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow:0px 2px 5px rgba(0 , 0 ,0 )
+}
+
+ul.thumbnails {
+    text-align: center;
+}
+
+ul.thumbnails li {
+    width: 70%;
+    padding: 5px;
+}
+
+.full-image-container {
+    width: 70%;
+    padding: 5px;
+
+}
+.full-image {
+   width: 70%;
+    padding: 5px;
+    margin: 20px auto;
+}

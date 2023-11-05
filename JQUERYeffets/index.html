@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQUERY</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+            display: none;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.js">
+
+    </script>
+    <script>
+        $(document).ready(function(){
+            $('button').click(function(){
+                $('#myBox').fadeToggle()
+            })
+        })
+    </script>
+</head>
+<body>
+    <h1>Effect Example</h1>
+    <button>Toggle boX</button>
+    <div id="myBox" class=" box" ></div>
+</body>
+</html>

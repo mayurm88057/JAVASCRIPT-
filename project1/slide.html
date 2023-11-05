@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <title>Art Gallery</title>
+        <style>
+            * {
+                padding: 0px;
+                margin: 0px;
+            }
+    
+            body {
+                text-align: center;
+                font-family: Arial, sans-serif;
+            }
+    
+            .header {
+                padding: 60px;
+                text-align: center;
+                background:darkolivegreen;
+                color: white;
+                font-size: 30px;
+            }
+    
+            .gallery {
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+    
+            #artDisplay {
+                max-width: 100%;
+                height: auto;
+                border: 1px solid #ccc;
+            }
+    
+            .navigation {
+                margin-top: 20px;
+            }
+    
+            #prev,
+            #next {
+                background-color: darkgreen;
+                border-radius: 50%;
+                color: white;
+                padding: 20px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+            }
+    
+            .footer {
+                height: 50px;
+                width: 100%;
+                background-color: black;
+                color: white;
+                text-align: center;
+                padding: 40px;
+                font-size: 50px;
+            }
+        </style>
+</head>
+<body>
+    <header class="header">
+        <h1> Interactive Art Gallery with HTML</h1>
+    </header>
+    <div class="gallery">
+        <img id="artDisplay" src="https://images.pexels.com/photos/4511301/pexels-photo-4511301.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=2" alt="artDisplay">
+        <div class="navigation">
+            <button id="prev">Previous</button>
+            <button id="next">Next</button>
+        </div>
+    </div>
+    <footer class="footer">
+        <p>Thank You</p>
+    </footer>
+    <script>
+        const slides = ["https://images.pexels.com/photos/4511301/pexels-photo-4511301.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            "https://images.pexels.com/photos/16929043/pexels-photo-16929043/free-photo-of-people-walking-in-green-field-near-windmills.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            "https://images.pexels.com/photos/17728880/pexels-photo-17728880/free-photo-of-landscape-water-field-summer.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            "https://images.pexels.com/photos/16616460/pexels-photo-16616460/free-photo-of-bosque-magico.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            "https://images.pexels.com/photos/18423507/pexels-photo-18423507/free-photo-of-burj-khalifa.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            "https://images.pexels.com/photos/15706251/pexels-photo-15706251/free-photo-of-red-vintage-car-stopped-on-the-crossroads.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+        ];
+
+        let currentIndex = 0;
+
+        const art = document.getElementById("artDisplay");
+        const prevButton = document.getElementById("prev");
+        const nextButton = document.getElementById("next");
+
+        function slideshow() {
+            art.src = slides[currentIndex];
+        }
+
+        prevButton.addEventListener("click", () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                slideshow();
+            }
+        });
+
+        nextButton.addEventListener("click", () => {
+            if (currentIndex < slides.length - 1) {
+                currentIndex++;
+                slideshow();
+            }
+        });
+
+        slideshow();
+
+    </script>
+
+
+
+<webchatgpt-custom-element-f20f6b2f-d052-4877-8d5f-2eb27c7807a8 id="webchatgpt-snackbar" style="z-index: 2147483647;"></webchatgpt-custom-element-f20f6b2f-d052-4877-8d5f-2eb27c7807a8></body>
+</html>
