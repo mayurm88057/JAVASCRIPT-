@@ -2,22 +2,109 @@
 <html>
 <head>
     <title>Image Gallery</title>
-    <link rel="stylesheet" href="styles.css">
+<style>
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        padding:0;
+    }
+    header{
+        background-color: aquamarine;
+        color: black;
+        padding: 20px 0;
+         text-align: center;
+    }
+    h1{
+        margin:0;
+
+    }
+    main{
+        max-width: 800px;
+    margin: 0 auto ;
+    padding : 20px;
+    text-align: center;
+}
+
+.indexOne{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+img{
+    max-width: 100%;
+    max-height: 400px;
+    margin :0 10px;
+
+
+}
+.control{
+    margin-top:20px;
+}
+button{
+    padding: 10px 20px ;
+    font-size: 16px;
+    cursor: pointer;
+}
+ 
+ </style>
 </head>
 <body>
-    <div class="gallery">
-        <ul class="thumbnails">
-            <li><img src="1.jpeg" alt="Thumbnail 1" class="thumbnail"></li>
-            <li><img src="1.jpeg" alt="Thumbnail 2" class="thumbnail"></li>
-            <li><img src="1.jpeg" alt="Thumbnail 3" class="thumbnail"></li>
-         
-        </ul>
-        <div class="full-image-container">
-            <img src="1.jpeg" alt="Full Image" class="full-image">
-        </div>
-    </div>
+    <header>
+        <h1>GALLERY REVIEW</h1>
+    </header>
+   <main>
+    <div class="indexOne"><img src="https://images.pexels.com/photos/1072179/pexels-photo-1072179.jpeg?auto=compress&cs=tinysrgb&w=600" alt="mywork"></div>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="script.js"></script>
+        <div class="controls">
+            <button id="prev-btn">Previous</button>
+            <button id="next-btn">Next</button>
+        </div>
+    
+   </main> 
+   <script>
+    const slides= ['https://images.pexels.com/photos/103123/pexels-photo-103123.jpeg?auto=compress&cs=tinysrgb&w=600',
+    'https://images.pexels.com/photos/3075993/pexels-photo-3075993.jpeg?auto=compress&cs=tinysrgb&w=600',
+    'https://images.pexels.com/photos/1261731/pexels-photo-1261731.jpeg?auto=compress&cs=tinysrgb&w=600',
+    'https://images.pexels.com/photos/1387037/pexels-photo-1387037.jpeg?auto=compress&cs=tinysrgb&w=600',
+    'https://images.pexels.com/photos/18550063/pexels-photo-18550063/free-photo-of-moon-cake.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    'https://images.pexels.com/photos/13811613/pexels-photo-13811613.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    'https://images.pexels.com/photos/17565900/pexels-photo-17565900/free-photo-of-reflection-of-neoclassical-building.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+   ];
+
+
+    let currentIndex= 0;
+    const indexOne= document.querySelector('.indexOne');
+
+    function showImage(index){
+        const imageLinks=slides[index];
+        indexOne.innerHTML=`<img src="${imageLinks}" alt="artwork">`;
+
+    }
+
+    function updatedSlide(){
+        showImage(currentIndex);
+
+    }
+    document.getElementById('prev-btn').addEventListener('click', () => {
+        if(currentIndex > 0){
+            currentIndex--;
+            updatedSlide();
+
+        }
+    });
+
+    document.getElementById('next-btn').addEventListener('click', ()=>{
+        if(currentIndex < slides.length -1 ){
+            currentIndex ++ ;
+            updatedSlide();
+
+        }
+    });
+   // initial slide upload
+    updatedSlide();
+   </script>
+
+<webchatgpt-custom-element-3192076d-71de-40ed-97e6-814903a4fd2c id="webchatgpt-snackbar" style="z-index: 2147483647;"></webchatgpt-custom-element-3192076d-71de-40ed-97e6-814903a4fd2c>
 </body>
 </html>
